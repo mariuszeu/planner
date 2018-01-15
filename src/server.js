@@ -1,10 +1,18 @@
 const http = require('http');
+const url = require('url');
 
-function start() {
+function start(controllers) {
     http.createServer(function(request, response){
 
-        response.writeHead(200, {'Content-type': 'text/plain; charset=utf-8'});
-        response.end('Hello World! ółśążźńę');
+        //response.writeHead(200, {'Content-type': 'text/plain; charset=utf-8'});
+        //response.end('Hello World! ółśążźńę');
+
+        var pathName = url.parse(request.url).pathname;
+
+        if (!controllers[pathName]) {
+            pathName = '/404';
+        }
+        controllers[pathName](request, response);
 
     }).listen(8088, '127.0.0.1');
 
