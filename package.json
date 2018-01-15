@@ -1,0 +1,11 @@
+{
+  "name": "planner",
+  "version": "1.0.0",
+  "description": "Web Planner",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mariusz Gerus",
+  "license": "ISC"
+}
