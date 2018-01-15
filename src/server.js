@@ -1,7 +1,7 @@
 const http = require('http');
 const url = require('url');
 
-function start(controllers) {
+function start(routing) {
     http.createServer(function(request, response){
 
         //response.writeHead(200, {'Content-type': 'text/plain; charset=utf-8'});
@@ -9,10 +9,10 @@ function start(controllers) {
 
         var pathName = url.parse(request.url).pathname;
 
-        if (!controllers[pathName]) {
+        if (!routing[pathName]) {
             pathName = '/404';
         }
-        controllers[pathName](request, response);
+        routing[pathName](request, response);
 
     }).listen(8088, '127.0.0.1');
 
