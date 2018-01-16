@@ -5,6 +5,7 @@ var routing = {
     '/': controllers.index,
     '/404': controllers.error404,
     '/about': controllers.about,
+    '/contact': controllers.contact,
     '/planner-weekly': controllers.plannerWeekly
 };
 
